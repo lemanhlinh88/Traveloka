@@ -1,0 +1,39 @@
+# services:
+#   xtlab-mysql:
+#     image: mysql:8.0
+#     container_name: Mysql
+#     restart: always
+#     hostname: mysql
+#     environment:
+#       MYSQL_ROOT_PASSWORD: ${MYSQL_ROOT_PASSWORD}
+#       MYSQL_DATABASE: ${MYSQL_DATABASE}
+#       MYSQL_USER: ${MYSQL_USER}
+#       MYSQL_PASSWORD: ${MYSQL_PASSWORD}
+#     volumes:
+#       - mysqlvolume:/var/lib/mysql
+#       - ./bk:/backup
+#     ports:
+#       - "3307:3306"
+
+# volumes:
+#   mysqlvolume:
+#     name: mysql-vl
+services:
+  xtlab-mssql:
+    image: "mcr.microsoft.com/mssql/server:2017-latest"
+    container_name: Traveloka
+    restart: always
+    hostname: mssql
+    environment:
+      SA_PASSWORD: ${SA_PWD}
+      ACCEPT_EULA: "Y"
+      # Express:
+
+    volumes:
+      - mssqlvolume:/var/opt/mssql/data # thư mục lưu DB
+    ports:
+      - "1433:1433"
+
+volumes:
+  mssqlvolume:
+    name: Traveloka-vl
