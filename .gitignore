@@ -456,3 +456,6 @@ $RECYCLE.BIN/
 .vagrant/*
 Vagrant/.vagrant/*
 Vagrant/.vagrant
+
+# "Microsoft.EntityFrameworkCore.QueryX": "Information",
+# "Microsoft.EntityFrameworkCore.Database.CommandX": "Information"
